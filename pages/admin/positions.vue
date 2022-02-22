@@ -54,7 +54,7 @@
 
     <div class="text-xs-center mt-5">
       <v-pagination
-        color="orange"
+        color="#0098b0"
         v-if="paginate > 1"
         v-model="page"
         :length="paginate"

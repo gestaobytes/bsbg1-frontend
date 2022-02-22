@@ -8,7 +8,7 @@
       <v-spacer />
       <span class="caption mr-2" v-if="errorValidation"> Botão será ativado após preenchimento dos campos obrigatórios</span>
       <v-btn large disabled v-if="errorValidation">{{msgBtn}}</v-btn>
-      <v-btn large color="orange" dark depressed v-else @click="$emit('save')">{{msgBtn}}</v-btn>
+      <v-btn large color="#0098b0" dark depressed v-else @click="$emit('save')">{{msgBtn}}</v-btn>
     </v-card-actions>
 
 

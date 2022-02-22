@@ -2,7 +2,7 @@
   <v-text-field
     :class="text-field-form"
     :placeholder="placeholder"
-    color="orange"
+    color="#0098b0"
 
     v-bind:value="value"
     @input="$emit('input', $event)"

@@ -1,6 +1,6 @@
 <template>
   <div class="text-xs-center mt-5 mb-10">
-    <v-pagination color="orange" v-model="currentPage" :length="tamanho" total-visible="7" circle></v-pagination>
+    <v-pagination color="#0098b0" v-model="currentPage" :length="tamanho" total-visible="7" circle></v-pagination>
   </div>
 </template>
 <script>

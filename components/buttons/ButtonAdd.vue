@@ -1,6 +1,6 @@
 <template>
   <v-btn
-    color="orange"
+    color="#0098b0"
     dark
     @click="$emit('add')"
     :title="defineTitle"

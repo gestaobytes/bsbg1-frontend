@@ -128,7 +128,7 @@
     </v-layout>
 
     <div class="text-xs-center mt-5">
-      <v-pagination color="orange" v-if="paginate > 1" v-model="page" :length="paginate" :total-visible="7" circle/>
+      <v-pagination color="#0098b0" v-if="paginate > 1" v-model="page" :length="paginate" :total-visible="7" circle/>
     </div>
 
   </div>

@@ -7,7 +7,7 @@
     required
     :dense=defineDense
     :dark=defineDark
-    color="orange"
+    color="#0098b0"
     :outlined=defineOutlined
   />
 </template>

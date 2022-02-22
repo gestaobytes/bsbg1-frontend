@@ -1,7 +1,7 @@
 <template>
   <div>
     <AccessibilityMobile v-if="accessibility" />
-    <v-bottom-navigation app color="orange" grow v-if="this.$nuxt.$vuetify.breakpoint.name == 'xs'">
+    <v-bottom-navigation app color="#0098b0" grow v-if="this.$nuxt.$vuetify.breakpoint.name == 'xs'">
       <v-btn @click="alternateDrawer()">
         <span>Menu</span>
         <v-icon>mdi-menu</v-icon>

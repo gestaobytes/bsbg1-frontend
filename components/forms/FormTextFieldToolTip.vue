@@ -6,7 +6,7 @@
     :hint="hint"
     :type="defineType"
     :label="label"
-    color="orange"
+    color="#0098b0"
     persistent-hint
     :counter="counter"
     :rules="rules"

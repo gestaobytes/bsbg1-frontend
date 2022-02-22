@@ -5,7 +5,7 @@
     :items="itemsData"
     :label="label"
     required
-    color="orange"
+    color="#0098b0"
     :outlined=defineOutlined
     :dense=defineDense
     :deletable-chips=defineDeletable

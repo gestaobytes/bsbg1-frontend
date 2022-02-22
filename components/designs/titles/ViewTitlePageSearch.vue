@@ -2,7 +2,7 @@
   <div>
     <v-row class="mt-n3 mb-3">
       <v-col sm="6" md="6" lg="6" xl="6">
-        <h5 class="mt-3" style="font-weight: 350; color: orange; margin-right: 1rem">
+        <h5 class="mt-3" style="font-weight: 350; color: #0098b0; margin-right: 1rem">
           {{ titlePage }}
         </h5>
         <v-spacer></v-spacer>
@@ -25,13 +25,13 @@
                   max="50"
                   :label="defineLabel"
                   required
-                  color="orange"
+                  color="#0098b0"
                   hint="Digite entre 5 e 50 caracteres"
                 >
                   <template v-slot:append-outer>
                     <v-btn
                       class="mt-n2 py-5"
-                      color="orange"
+                      color="#0098b0"
                       dark
                       depressed
                       @click="$emit('clickSubmit')"

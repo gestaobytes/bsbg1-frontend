@@ -3,7 +3,7 @@
     <AccessibilityMobile v-if="accessibility" />
     <v-bottom-navigation
       app
-      color="orange"
+      color="#0098b0"
       grow
       v-if="height == 'xs'"
     >

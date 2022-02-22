@@ -8,7 +8,7 @@
         :type="defineType"
         :nameField="nameField"
         :label="label"
-        color="orange"
+        color="#0098b0"
         :min="min"
         :max="max"
         :counter="counter"
@@ -25,7 +25,7 @@
       >
         <template slot="append-outer" v-if="complement">
           <div :class="(errordata || validate == true) ? 'complement-error' : 'complement'"> {{complement}} </div>
-          <!-- <v-btn disabled tile small class="ml-n2 mt-n2" color="orange" height="40">
+          <!-- <v-btn disabled tile small class="ml-n2 mt-n2" color="#0098b0" height="40">
 
           </v-btn> -->
         </template>
@@ -115,7 +115,7 @@ export default {
   font-weight: 300;
   margin-left: -13px;
   z-index: 5;
-  background-color: orange;
+  background-color: #0098b0;
   color: white;
   height: 40px;
 

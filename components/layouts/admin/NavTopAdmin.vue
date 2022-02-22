@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar app color="orange" dark>
+    <v-app-bar app color="#0098b0" dark>
       <v-app-bar-nav-icon  @click="alternateDrawer()" v-if="!isSmOrXs"/>
 
       <v-spacer></v-spacer>
@@ -11,7 +11,7 @@
             <v-avatar size="32px" v-if="imageUser != '' && imageUser != null">
               <img :src="storage + /users/ + imageUser" />
             </v-avatar>
-            <v-avatar color="orange" size="32px" v-else>
+            <v-avatar color="#0098b0" size="32px" v-else>
               {{ initialNameUser }}
             </v-avatar>
           </v-btn>

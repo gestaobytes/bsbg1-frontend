@@ -10,7 +10,7 @@
             <td width="50px">
               <v-tooltip left>
                 <template v-slot:activator="{ on, attrs }">
-                  <v-btn fab outlined small color="orange" @click="$emit('close')" v-bind="attrs" v-on="on">
+                  <v-btn fab outlined small color="#0098b0" @click="$emit('close')" v-bind="attrs" v-on="on">
                     <span>X</span>
                   </v-btn>
                 </template>
@@ -28,7 +28,7 @@
           <v-btn color="grey lighten-1" dark small depressed @click="$emit('close')">Fechar</v-btn>
           <v-spacer />
           <v-btn disabled small v-if="errorValidation">ENVIAR</v-btn>
-          <v-btn color="orange" dark small depressed v-else @click="$emit('save')">ENVIAR</v-btn>
+          <v-btn color="#0098b0" dark small depressed v-else @click="$emit('save')">ENVIAR</v-btn>
         </v-card-actions>
 
        </div>

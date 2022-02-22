@@ -13,7 +13,7 @@
   >
     <v-badge
       bordered
-      color="orange"
+      color="#0098b0"
       offset-x="20"
       offset-y="10"
       v-if="badge"

@@ -88,7 +88,7 @@
         </v-col>
 
         <v-col cols="12" xs="12" sm="12" md="4" lg="4" xl="4">
-          <v-alert color="orange darken-1" outlined>
+          <v-alert color="#0098b0 darken-1" outlined>
             <v-row>
               <v-col cols="12">
                 <p class="title mb-n1 mt-n5">Produção</p>
@@ -99,7 +99,7 @@
               origem="Total Cadastrado"
               :accesses="allAccesses.postTotal"
               :value="100"
-              color="orange darken-1"
+              color="#0098b0 darken-1"
             />
             <BarProgressProduction
               origem="30 dias"

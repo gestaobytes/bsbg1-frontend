@@ -1,7 +1,7 @@
 <template>
   <v-btn
     class="my-1 mr-2 pa-n7"
-    color="orange"
+    color="#0098b0"
     fab
     x-small
     dark

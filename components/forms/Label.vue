@@ -31,6 +31,6 @@ export default {
   margin-top: -5px;
   font-size: 1.2em;
   font-weight: 200;
-  color: orange;
+  color: #0098b0;
 }
 </style>

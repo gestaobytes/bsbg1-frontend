@@ -32,7 +32,7 @@
                     type="email"
                     name="email"
                     label="Email"
-                    color="orange"
+                    color="#0098b0"
                     outlined
                     dense
                     :append-icon="$v.form.email.$error ? 'mdi-alert-circle' : ''"
@@ -52,7 +52,7 @@
                     type="password"
                     name="password"
                     label="Password"
-                    color="orange"
+                    color="#0098b0"
                     outlined
                     dense
                     :append-icon="$v.form.password.$error ? 'mdi-alert-circle' : ''"
@@ -71,7 +71,7 @@
                 <v-btn
                   :disabled="this.$v.form.$invalid"
                   :dark="!this.$v.form.$invalid"
-                  color="orange"
+                  color="#0098b0"
                   block
                   type="submit"
                   :loading="loadingBtn"
