@@ -1,0 +1,228 @@
+<template>
+  <!-- <div :class="sticky ? 'top-fixed shadow' : 'shadow'"> -->
+  <div class='shadow'>
+    <div style="background: #003399; margin-top: -20px" height="5px">.
+      <!-- <div class="container"> -->
+
+        <!-- <table width="100%">
+          <tr>
+            <td width="50px">
+              <v-btn
+                color="#ff0000"
+                outlined
+                small
+                @click="alternateDrawer()"
+                v-if="this.$nuxt.$vuetify.breakpoint.name != 'xs'"
+              >
+                <v-icon small class="mr-2">mdi-menu</v-icon> Editorial
+              </v-btn>
+            </td>
+            <td width="160px" class="text-right">
+              <v-btn
+                fab
+                x-small
+                :outlined="!$vuetify.theme.dark"
+                dark
+                class="pa-n2 mr-2"
+                href="https://www.facebook.com"
+              >
+                <v-icon small class="ma-n1">fab fa-facebook-f</v-icon>
+              </v-btn>
+
+              <v-btn
+                fab
+                x-small
+                :outlined="!$vuetify.theme.dark"
+                dark
+                class="pa-n2 mr-2"
+                href="https://twitter.com"
+              >
+                <v-icon small class="ma-n1">fab fa-twitter</v-icon>
+              </v-btn>
+            </td>
+          </tr>
+        </table> -->
+
+      <!-- </div> -->
+    </div>
+
+    <div class="top-header">
+      <div class="container">
+        <!-- <table width="100%">
+          <tr>
+            <td width="100px" class="text-right">
+              .
+            </td>
+            <td class="text-center">
+              <NuxtLink to="/">
+                <img
+                  src="@/static/logo-bsbg1-color.svg"
+                  :alt="titlePage"
+                  width="250px"
+                  style="z-index:999"
+                  class="mb-10"
+                />
+              </NuxtLink>
+            </td>
+            <td width="100px" class="text-right">
+              <img
+                src="@/static/by-raimundo-lira.svg"
+                :alt="titlePage"
+                width="100%"
+                class="mt-10"
+              />
+            </td>
+          </tr>
+        </table> -->
+
+        <table width="100%">
+          <tr>
+            <td width="100px" class="text-right">.</td>
+            <td class="text-center">
+              <NuxtLink to="/">
+                <img
+                  src="@/static/logo-bsbg1.svg"
+                  :alt="titlePage"
+                  width="350px"
+                  style="z-index:999"
+                />
+              </NuxtLink>
+            </td>
+            <td width="100px" class="text-right">
+              <p class="datenow ml-3 mt-2 mb-n1 text--primary">
+                Palmas/TO, {{ dateNow }}
+              </p>
+            </td>
+          </tr>
+        </table>
+
+      </div>
+        <v-card tile color="#ff0000">
+          <div class="container">
+            <v-tabs
+              height="25"
+              dark
+              background-color="transparent"
+              show-arrows
+            >
+              <v-tabs-slider color="teal lighten-3"></v-tabs-slider>
+                <v-tab>HOME</v-tab>
+                <v-tab>ESTADO</v-tab>
+                <v-tab>GERAL</v-tab>
+                <v-tab>POLÍTICA</v-tab>
+                <v-tab>NACIONAL</v-tab>
+                <v-tab>INTERNACIONAL</v-tab>
+                <v-tab>OPINIÃO E ANÁLISE</v-tab>
+                <v-tab>BRASÍLIA</v-tab>
+                <v-tab>ENTREVISTA</v-tab>
+            </v-tabs>
+          </div>
+        </v-card>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+import { urlPublic, titlePage } from "@/global";
+
+export default {
+  name: "NavTop",
+  computed: {
+    drawerState() {
+      return this.$store.state.sidebar.drawerState;
+    },
+  },
+
+  data() {
+    return {
+      dialog: false,
+      sticky: false,
+      titlePage: titlePage,
+      valueCategories: [],
+      categories: [],
+      menuCategories: [],
+      inputKeywords: "",
+      inputKeywordsMenu: "",
+      dateStart: "2010-01-01",
+      dateFinish: "2020-05-02",
+      dateNow: "",
+      errorValidate: false,
+      disabledButton: true,
+      activeDark: false,
+      keywordSearch: "",
+      dialogSearch: false,
+      textExact: "no",
+      icons: ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"],
+    };
+  },
+
+  methods: {
+    allowedDates: (val) => parseInt(val.split("-")[2], 10) % 2 === 0,
+
+    handleScroll() {
+      this.sticky = window.scrollY >= 120 ? true : false;
+    },
+
+    alternateDrawer() {
+      this.$store.dispatch("sidebar/SET_DRAWER", !this.drawerState);
+    },
+
+    loadCategoriesAndBlogs() {
+      axios.get(`${urlPublic}/categories`).then((res) => {
+        this.categories = res.data.map((c) => {
+          return c.id, c.title;
+        });
+        this.menuCategories = res.data;
+      });
+    },
+  },
+
+  mounted() {
+    this.loadCategoriesAndBlogs();
+
+    window.addEventListener("scroll", this.handleScroll);
+
+    var dateNow = new Date();
+    var year = dateNow.getFullYear();
+    var month = dateNow.getMonth() + 1;
+    var day = dateNow.getDate();
+    if (day < 10) day = "0" + day;
+    if (month < 10) month = "0" + month;
+    this.dateFinish = year + "-" + month + "-" + day;
+
+    this.dateNow = day + "/" + month + "/" + year;
+  },
+};
+</script>
+
+<style scoped>
+button > .icon {
+  font-size: 1.5em;
+}
+
+#create .v-speed-dial {
+  position: absolute;
+}
+
+#create .v-btn--floating {
+  position: relative;
+}
+.datenow {
+  font-size: 0.6em;
+  font-weight: 300;
+}
+
+.top-header {
+  background-color: #fff;
+}
+.shadow {
+  background-color: #fff;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+.top-fixed {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+}
+</style>
