@@ -8,20 +8,11 @@
               <NuxtLink to="/">
                 <img
                   class="ma-5 mb-2"
-                  style="width: 100%; max-width: 270px; text-align: center"
-                  src="@/static/logo-h-mts-color.svg"
                   alt="Gestão Bytes"
+                  style="width: 100%; max-width: 270px; text-align: center"
+                  src="@/static/verticalLogoGB.svg"
                 />
               </NuxtLink>
-
-              <!-- <NuxtLink to="/">
-                <img
-                  src="@/static/verticalLogoGB.svg"
-                  alt="Gestão Bytes"
-                />
-              </NuxtLink> -->
-
-
             </div>
             <v-card-text>
               <v-form @submit.prevent="userLogin" v-if="isLogin">

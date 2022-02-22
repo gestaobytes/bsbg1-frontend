@@ -9,13 +9,13 @@
     <div style="background:black">
       <v-list-item class="px-2 pt-1 pb-1" nuxt to="/admin">
         <v-list-item-avatar>
-          <img src="@/static/logo-mtsites.svg" alt="Meu Top Site" />
+          <img src="@/static/logo-gb-header.svg" alt="GestãoBytes" />
         </v-list-item-avatar>
         <v-list-item-content>
           <v-list-item-title>
             <img
              class="mt-n2 mb-n2"
-              src="@/static/meutopsite.svg"
+              src="@/static/logo-gb-text-header.svg"
               style="width: 100%; max-width: 180px; text-align: center"
               alt="Gestão Bytes"
             />

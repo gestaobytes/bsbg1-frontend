@@ -332,7 +332,8 @@ export default {
         this.subcategories = res.data.map((subcategory) => {
           return {
             value: subcategory.id,
-            text: subcategory.titleCategory + " " + subcategory.title,
+            text: subcategory.titleCategory,
+            // text: subcategory.titleCategory + " " + subcategory.title,
           };
         });
       });
