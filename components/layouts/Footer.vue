@@ -11,19 +11,20 @@
                 DRT/GO 01280JP <br/> <br/>
               </v-col>
 
+
               <v-col cols="12" sm="4" md="3">
-                <NuxtLink class="link-footer" to="/">HOME</NuxtLink> <br/>
-                <NuxtLink class="link-footer" to="/estado">ESTADO</NuxtLink> <br/>
-                <NuxtLink class="link-footer" to="/geral">GERAL</NuxtLink> <br/>
-                <NuxtLink class="link-footer" to="/politica">POLÍTICA</NuxtLink> <br/>
-                <NuxtLink class="link-footer" to="/nacional">NACIONAL</NuxtLink> <br/>
+                <NuxtLink class="link-footer" :to="{ name: 'index'}">HOME</NuxtLink> <br/>
+                <NuxtLink class="link-footer" :to="{ name: 'category', params: { category: 'estado' }}">ESTADO</NuxtLink> <br/>
+                <NuxtLink class="link-footer" :to="{ name: 'category', params: { category: 'geral' }}">GERAL</NuxtLink> <br/>
+                <NuxtLink class="link-footer" :to="{ name: 'category', params: { category: 'politica' }}">POLÍTICA</NuxtLink> <br/>
+                <NuxtLink class="link-footer" :to="{ name: 'category', params: { category: 'nacional' }}">NACIONAL</NuxtLink> <br/>
               </v-col>
 
               <v-col cols="12" sm="4" md="3">
-                <NuxtLink class="link-footer" to="/internacional">INTERNACIONAL</NuxtLink> <br/>
-                <NuxtLink class="link-footer" to="/opiniao-e-analise">OPINIÃO E ANÁLISE</NuxtLink> <br/>
-                <NuxtLink class="link-footer" to="/brasilia">BRASÍLIA</NuxtLink> <br/>
-                <NuxtLink class="link-footer" to="/entrevista">ENTREVISTA</NuxtLink> <br/>
+                <NuxtLink class="link-footer" :to="{ name: 'category', params: { category: 'internacional' }}">INTERNACIONAL</NuxtLink> <br/>
+                <NuxtLink class="link-footer" :to="{ name: 'category', params: { category: 'opiniao-e-analise' }}">OPINIÃO E ANÁLISE</NuxtLink> <br/>
+                <NuxtLink class="link-footer" :to="{ name: 'category', params: { category: 'brasilia' }}">BRASÍLIA</NuxtLink> <br/>
+                <NuxtLink class="link-footer" :to="{ name: 'category', params: { category: 'entrevista' }}">ENTREVISTA</NuxtLink> <br/>
               </v-col>
 
               <v-col cols="12" sm="4" md="3" style="text-align: right">

@@ -4,11 +4,7 @@
       <v-row>
         <v-col cols="12">
           <v-layout class="container">
-            <h5
-              class="ml-3 titles-sharing-tags text-uppercase text--primary mb-1"
-            >
-              {{ titleCategory }}
-            </h5>
+            <h5 class="ml-3 titles-sharing-tags text-uppercase text--primary mb-1">{{titleCategory}}</h5>
           </v-layout>
         </v-col>
       </v-row>
@@ -18,34 +14,26 @@
       <v-col cols="12">
         <v-layout class="container">
           <v-row>
-            <v-col xs="12" sm="12" md="6" lg="6" xl="6" cols="12" class="pt-n5">
-              <TitleImageListedTags
-                lazyData="true"
-                :fontData="registersOfTable"
-              />
+            <v-col cols="12" class="pt-n5">
+
+              <TitleImageListedTags lazyData="true" :fontData="registersOfTable" />
 
               <div class="text-xs-center mt-5">
                 <v-btn
                   color="secondary"
                   block
                   large
-                  outlined
                   dark
                   @click="getLoadMore()"
                   class="mt-5 mb-7"
                   v-if="loadMore"
-                  >CARREGAR MAIS</v-btn
-                >
+                >CARREGAR MAIS</v-btn>
               </div>
             </v-col>
 
-            <v-col xs="12" sm="6" md="3" lg="2" xl="2" cols="12">
-              <AdBanners lazyData="false" :fontData="banner01" />
-              <MostAccessedDay lazyData="false" :fontData="mostAccessedDay" />
-              <AdBanners lazyData="false" :fontData="banner02" />
-              <AdBanners lazyData="false" :fontData="banner03" />
-              <MostAccessedWeek lazyData="false" :fontData="mostAccessedWeek" />
-            </v-col>
+
+
+
           </v-row>
         </v-layout>
       </v-col>
@@ -54,8 +42,8 @@
 </template>
 
 <script>
-import axios from "axios";
-import { urlPublic, urlApi, urlSite } from "@/global";
+import axios from 'axios'
+import { urlPublic, urlApi, urlSite } from '@/global'
 
 import bannersData from "~/components/api/_banners-data";
 import callsData from "~/components/api/_calls-data";
@@ -71,7 +59,7 @@ export default {
     MostAccessedWeek,
     MostAccessedDay,
   },
-  data: function () {
+  data: function() {
     return {
       urlSite: `${urlSite}`,
       listTags: "",
@@ -89,11 +77,11 @@ export default {
       count: 0,
       limit: 0,
       paginate: 0,
-      qtdRegisters: 0,
+      qtdRegisters: 0
     };
   },
 
-  methods: {
+ methods: {
     loadPostsCategory() {
       axios.get(`${this.url}?page=${this.page}`).then((res) => {
         this.titleCategory = res.data.data[0].category;
@@ -130,34 +118,25 @@ export default {
     return {
       title: this.titleCategory,
       meta: [
-        {
-          hid: "description",
-          name: "description",
-          content:
-            "Confira as postagens mais relevantes sobre " + this.titleCategory,
-        },
-        {
-          hid: "keywords",
-          name: "keywords",
-          content: this.titleCategory + " BSBG1",
-        },
+        { hid: "description", name: "description", content: "Confira as postagens mais relevantes sobre " + this.titleCategory },
+        { hid: "keywords", name: "keywords", content: this.titleCategory + " JMOMENTO" },
 
-        { property: "twitter:title", content: this.titleCategory + " BSBG1" },
+        { property: "twitter:title", content: this.titleCategory + " JMOMENTO" },
         { property: "og:url", content: this.urlSite },
         { property: "twitter:url", content: this.urlSite },
-        { property: "og:title", content: this.titleCategory + " BSBG1" },
-        { property: "og:description", content: this.titleCategory + " BSBG1" },
-        {
-          property: "twitter:description",
-          content: this.titleCategory + " BSBG1",
-        },
-        { property: "article:tag", content: this.titleCategory + " BSBG1" },
+        { property: "og:title", content: this.titleCategory + " JMOMENTO" },
+        { property: "og:description", content: this.titleCategory + " JMOMENTO" },
+        { property: "twitter:description", content: this.titleCategory + " JMOMENTO" },
+        { property: "article:tag", content: this.titleCategory + " JMOMENTO" },
       ],
-      link: [{ hid: "canonical", href: this.urlSite }],
+      link: [
+        { hid: 'canonical', href: this.urlSite },
+      ],
       script: [
         // { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
       ],
     };
   },
+
 };
 </script>

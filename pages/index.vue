@@ -7,22 +7,22 @@
           <v-card class="pa-7">
             <CallImageTitleAndSubtitle
               lazyData="false"
-              :retracts="post[20]"
-              :fontData="post[20]"
-              v-if="post[20]"
+              :retracts="post[0]"
+              :fontData="post[0]"
+              v-if="post[0]"
             />
           </v-card>
         </v-col>
 
         <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12">
           <div class="mb-7">
-            <AdBanners lazyData="false" :fontData="banners[2]" v-if="banners[2]" />
+            <AdBanners lazyData="false" :fontData="banners[0]" v-if="banners[0]" />
           </div>
           <CallImageTitle
             lazyData="false"
-            :retracts="post[18]"
-            :fontData="post[18]"
-            v-if="post[18]"
+            :retracts="post[1]"
+            :fontData="post[1]"
+            v-if="post[1]"
           />
         </v-col>
 
@@ -30,79 +30,79 @@
           <div class="card-border mb-7 pt-4 pb-3">
             <CallTitle
               lazyData="false"
-              :retracts="post[20]"
-              :fontData="post[20]"
-              v-if="post[20]"
+              :retracts="post[2]"
+              :fontData="post[2]"
+              v-if="post[2]"
             />
           </div>
 
           <CallImageTitle
             lazyData="false"
-            :retracts="post[19]"
-            :fontData="post[19]"
-            v-if="post[19]"
+            :retracts="post[3]"
+            :fontData="post[3]"
+            v-if="post[3]"
           />
         </v-col>
 
         <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12">
           <CallImageTitle
             lazyData="false"
-            :retracts="post[18]"
-            :fontData="post[18]"
-            v-if="post[18]"
+            :retracts="post[4]"
+            :fontData="post[4]"
+            v-if="post[4]"
           />
           <hr class="hr-home mt-4 mb-4" />
           <div class="mt-5">
+            <AdBanners lazyData="false" :fontData="banners[1]" v-if="banners[1]" />
+          </div>
+        </v-col>
+
+        <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12">
+          <CallImageTitle
+            lazyData="false"
+            :retracts="post[5]"
+            :fontData="post[5]"
+            v-if="post[5]"
+          />
+          <hr class="hr-home mt-4 mb-4" />
+          <div class="mt-5">
+             <CallTitle
+              lazyData="false"
+              :retracts="post[6]"
+              :fontData="post[6]"
+              v-if="post[6]"
+            />
+          </div>
+        </v-col>
+
+        <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12" v-if="!$vuetify.breakpoint.lg || !$vuetify.breakpoint.xl">
+          <div class="mb-5">
             <AdBanners lazyData="false" :fontData="banners[2]" v-if="banners[2]" />
           </div>
-        </v-col>
 
-        <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12">
           <CallImageTitle
             lazyData="false"
-            :retracts="post[18]"
-            :fontData="post[18]"
-            v-if="post[18]"
+            :retracts="post[7]"
+            :fontData="post[7]"
+            v-if="post[7]"
+          />
+
+        </v-col>
+
+        <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12" v-if="!$vuetify.breakpoint.lg || !$vuetify.breakpoint.xl">
+          <CallImageTitle
+            lazyData="false"
+            :retracts="post[8]"
+            :fontData="post[8]"
+            v-if="post[8]"
           />
           <hr class="hr-home mt-4 mb-4" />
           <div class="mt-5">
              <CallTitle
               lazyData="false"
-              :retracts="post[20]"
-              :fontData="post[20]"
-              v-if="post[20]"
-            />
-          </div>
-        </v-col>
-
-        <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12" v-if="!$vuetify.breakpoint.lg && !$vuetify.breakpoint.xl">
-          <div class="mb-5">
-            <AdBanners lazyData="false" :fontData="banners[3]" v-if="banners[3]" />
-          </div>
-
-          <CallImageTitle
-            lazyData="false"
-            :retracts="post[19]"
-            :fontData="post[19]"
-            v-if="post[19]"
-          />
-
-        </v-col>
-
-        <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12" v-if="!$vuetify.breakpoint.lg && !$vuetify.breakpoint.xl">
-          <CallImageTitle
-            lazyData="false"
-            :retracts="post[20]"
-            :fontData="post[20]"
-            v-if="post[20]"
-          />
-          <hr class="hr-home mt-4 mb-4" />
-          <div class="mt-5">
-             <CallTitle
-              lazyData="false"
-              :retracts="post[21]"
-              :fontData="post[21]"
-              v-if="post[21]"
+              :retracts="post[9]"
+              :fontData="post[9]"
+              v-if="post[9]"
             />
           </div>
         </v-col>
@@ -133,8 +133,8 @@
         <v-col sm="12" md="8" lg="6" xl="4" cols="12" class="px-5">
           <CallMainImageTitle
             lazyData="false"
-            :fontData="post[0]"
-            v-if="post[0]"
+            :fontData="post[10]"
+            v-if="post[10]"
           />
         </v-col>
         <!-- essa coluna será exibida somente se for SM.
@@ -147,8 +147,8 @@
         >
           <AdBanners
             lazyData="false"
-            :fontData="banners[0]"
-            v-if="banners[0]"
+            :fontData="banners[1]"
+            v-if="banners[1]"
           />
         </v-col>
 
@@ -162,45 +162,45 @@
         >
           <AdBanners
             lazyData="false"
-            :fontData="banners[1]"
-            v-if="banners[1]"
+            :fontData="banners[3]"
+            v-if="banners[3]"
           />
         </v-col>
 
         <v-col class="px-5" sm="6" md="4" lg="3" xl="2" cols="12" v-if="!$vuetify.breakpoint.lg">
-          <CallTitleImage lazyData="false" :fontData="post[1]" v-if="post[1]" />
+          <CallTitleImage lazyData="false" :fontData="post[11]" v-if="post[11]" />
         </v-col>
 
         <v-col class="px-5" sm="6" md="4" lg="3" xl="2" cols="12" v-if="!$vuetify.breakpoint.lg">
           <hr class="hr-home mt-5 mb-5" v-if="$vuetify.breakpoint.xs" />
-          <CallTitleImage lazyData="false" :fontData="post[2]" v-if="post[2]" />
+          <CallTitleImage lazyData="false" :fontData="post[12]" v-if="post[12]" />
         </v-col>
       </v-row>
 
       <v-row class="mt-5">
         <v-col sm="12" md="4" lg="6" xl="4" cols="12" class="px-5">
           <v-card class="pa-5">
-            <CallImageTitle lazyData="false" :fontData="post[4]" v-if="post[4]" />
+            <CallImageTitle lazyData="false" :fontData="post[14]" v-if="post[14]" />
 
             <hr class="hr-home mt-5 mb-10" />
-            <CallText :fontData="post[5]" v-if="post[5]" />
+            <CallText :fontData="post[15]" v-if="post[15]" />
           </v-card>
         </v-col>
 
         <v-col sm="6" md="4" lg="3" xl="2" cols="12">
           <v-card class="pa-5" color="#003399" elevation="0" dark>
-            <CallImageTitle lazyData="false" :fontData="post[6]" v-if="post[6]" />
+            <CallImageTitle lazyData="false" :fontData="post[16]" v-if="post[16]" />
             <hr class="hr-home mt-5 mb-10" />
-            <CallText :fontData="post[7]" v-if="post[7]" />
+            <CallText :fontData="post[17]" v-if="post[17]" />
           </v-card>
         </v-col>
 
         <v-col class="px-5" sm="6" md="4" lg="3" xl="2" cols="12">
-          <AdBanners lazyData="false" :fontData="banners[2]" v-if="banners[2]" />
+          <AdBanners lazyData="false" :fontData="banners[4]" v-if="banners[4]" />
           <hr class="hr-home mt-7 mb-7" />
-          <CallText :fontData="post[8]" v-if="post[8]" />
+          <CallText :fontData="post[18]" v-if="post[18]" />
           <hr class="hr-home mt-5 mb-7" />
-          <CallText :fontData="post[9]" v-if="post[9]" />
+          <CallText :fontData="post[19]" v-if="post[19]" />
         </v-col>
 
         <v-col
@@ -218,9 +218,9 @@
           "
         >
           <hr class="hr-home mt-n1 mb-5" v-if="$vuetify.breakpoint.xs" />
-          <CallTitleImage lazyData="false" :fontData="post[10]" v-if="post[10]" />
+          <CallTitleImage lazyData="false" :fontData="post[20]" v-if="post[20]" />
           <hr class="hr-home mt-6 mb-6" />
-          <CallTitleImage lazyData="false" :fontData="post[11]" v-if="post[11]" />
+          <CallTitleImage lazyData="false" :fontData="post[21]" v-if="post[21]" />
         </v-col>
         <v-col
           class="px-5"
@@ -237,9 +237,9 @@
           "
         >
           <hr class="hr-home mt-n1 mb-5" v-if="$vuetify.breakpoint.xs" />
-          <CallTitleImage lazyData="false" :fontData="post[12]" v-if="post[12]" />
+          <CallTitleImage lazyData="false" :fontData="post[22]" v-if="post[22]" />
           <hr class="hr-home mt-6 mb-6" />
-          <CallTitleImage lazyData="false" :fontData="post[13]" v-if="post[13]" />
+          <CallTitleImage lazyData="false" :fontData="post[23]" v-if="post[23]" />
         </v-col>
       </v-row>
     </div>
@@ -252,32 +252,32 @@
               <hr class="hr-home mt-n5 mb-5" v-if="$vuetify.breakpoint.xs" />
               <CallImageTitleWhite
                 lazyData="false"
-                :fontData="post[14]"
-                v-if="post[14]"
+                :fontData="post[24]"
+                v-if="post[24]"
               />
             </v-col>
             <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12">
               <hr class="hr-home mt-n1 mb-5" v-if="$vuetify.breakpoint.xs" />
               <CallImageTitleWhite
                 lazyData="false"
-                :fontData="post[15]"
-                v-if="post[15]"
+                :fontData="post[25]"
+                v-if="post[25]"
               />
             </v-col>
             <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12">
               <hr class="hr-home mt-n1 mb-5" v-if="$vuetify.breakpoint.xs" />
               <CallImageTitleWhite
                 lazyData="false"
-                :fontData="post[16]"
-                v-if="post[16]"
+                :fontData="post[26]"
+                v-if="post[26]"
               />
             </v-col>
             <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12">
               <hr class="hr-home mt-n1 mb-5" v-if="$vuetify.breakpoint.xs" />
               <CallImageTitleWhite
                 lazyData="false"
-                :fontData="post[17]"
-                v-if="post[17]"
+                :fontData="post[27]"
+                v-if="post[27]"
               />
             </v-col>
 
@@ -298,8 +298,8 @@
               <hr class="hr-home mt-n1 mb-5" v-if="$vuetify.breakpoint.xs" />
               <CallImageTitleWhite
                 lazyData="false"
-                :fontData="post[18]"
-                v-if="post[18]"
+                :fontData="post[28]"
+                v-if="post[28]"
               />
             </v-col>
             <v-col
@@ -319,8 +319,8 @@
               <hr class="hr-home mt-n1 mb-5" v-if="$vuetify.breakpoint.xs" />
               <CallImageTitleWhite
                 lazyData="false"
-                :fontData="post[19]"
-                v-if="post[19]"
+                :fontData="post[29]"
+                v-if="post[29]"
               />
             </v-col>
           </v-row>
@@ -423,7 +423,7 @@
         </v-col>
         <v-col sm="6" lg="3" cols="12">
           <hr class="hr-home mt-n5 mb-5" v-if="$vuetify.breakpoint.xs" />
-          <AdBanners lazyData="false" :fontData="banners[1]" v-if="banners[1]" />
+          <AdBanners lazyData="false" :fontData="banners[2]" v-if="banners[2]" />
         </v-col>
       </v-row>
     </div>

@@ -1,10 +1,11 @@
 <template>
   <!-- <div :class="sticky ? 'top-fixed shadow' : 'shadow'"> -->
-  <div class='shadow'>
-    <div style="background: #003399; margin-top: -20px" height="5px">.
+  <div class="shadow" :menuCategories=menuCategories>
+    <div style="background: #003399; margin-top: -20px" height="5px">
+      .
       <!-- <div class="container"> -->
 
-        <!-- <table width="100%">
+      <!-- <table width="100%">
           <tr>
             <td width="50px">
               <v-btn
@@ -82,9 +83,8 @@
               <NuxtLink to="/">
                 <img
                   src="@/static/logo-bsbg1.svg"
-                  :alt="titlePage"
                   width="350px"
-                  style="z-index:999"
+                  style="z-index: 999"
                 />
               </NuxtLink>
             </td>
@@ -95,39 +95,25 @@
             </td>
           </tr>
         </table>
-
       </div>
-        <v-card tile color="#ff0000">
-          <div class="container">
-            <v-tabs
-              height="25"
-              dark
-              background-color="transparent"
-              show-arrows
-            >
-              <v-tabs-slider color="teal lighten-3"></v-tabs-slider>
-                <v-tab>HOME</v-tab>
-                <v-tab>ESTADO</v-tab>
-                <v-tab>GERAL</v-tab>
-                <v-tab>POLÍTICA</v-tab>
-                <v-tab>NACIONAL</v-tab>
-                <v-tab>INTERNACIONAL</v-tab>
-                <v-tab>OPINIÃO E ANÁLISE</v-tab>
-                <v-tab>BRASÍLIA</v-tab>
-                <v-tab>ENTREVISTA</v-tab>
-            </v-tabs>
-          </div>
-        </v-card>
+      <v-card tile color="#ff0000">
+        <div class="container">
+          <v-tabs height="25" dark background-color="transparent" show-arrows>
+            <v-tabs-slider color="teal lighten-3"></v-tabs-slider>
+            <v-tab :to="{ name: 'index'}">HOME</v-tab>
+            <v-tab v-for="item in menuCategories" :key="item.id" :to="{ name: 'category', params: { category: item.slug} }">{{item.title}}</v-tab>
+          </v-tabs>
+        </div>
+      </v-card>
     </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
-import { urlPublic, titlePage } from "@/global";
-
 export default {
   name: "NavTop",
+  props: ["categories", "menuCategories"],
+
   computed: {
     drawerState() {
       return this.$store.state.sidebar.drawerState;
@@ -138,10 +124,6 @@ export default {
     return {
       dialog: false,
       sticky: false,
-      titlePage: titlePage,
-      valueCategories: [],
-      categories: [],
-      menuCategories: [],
       inputKeywords: "",
       inputKeywordsMenu: "",
       dateStart: "2010-01-01",
@@ -167,20 +149,9 @@ export default {
     alternateDrawer() {
       this.$store.dispatch("sidebar/SET_DRAWER", !this.drawerState);
     },
-
-    loadCategoriesAndBlogs() {
-      axios.get(`${urlPublic}/categories`).then((res) => {
-        this.categories = res.data.map((c) => {
-          return c.id, c.title;
-        });
-        this.menuCategories = res.data;
-      });
-    },
   },
 
   mounted() {
-    this.loadCategoriesAndBlogs();
-
     window.addEventListener("scroll", this.handleScroll);
 
     var dateNow = new Date();

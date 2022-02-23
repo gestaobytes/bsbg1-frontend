@@ -7,6 +7,9 @@
       fab
       small
       class="btn-sharing"
+      dark
+      elevatio="0"
+      color="#ff0000"
       target="_blank"
       v-if="socialMedia == 'facebook'"
     >
@@ -28,6 +31,9 @@
       fab
       small
       class="btn-sharing"
+      dark
+      elevatio="0"
+      color="#ff0000"
       target="_blank"
       v-if="socialMedia == 'twitter'"
     >
@@ -41,6 +47,9 @@
       fab
       small
       class="btn-sharing"
+      dark
+      elevatio="0"
+      color="#ff0000"
       target="_blank"
       v-if="socialMedia == 'linkedin'"
     >
@@ -54,6 +63,9 @@
       fab
       small
       class="btn-sharing"
+      dark
+      elevatio="0"
+      color="#ff0000"
       target="_blank"
       v-if="socialMedia == 'whatsapp'"
     >
@@ -69,6 +81,9 @@
       id="telegram-share-btt"
       small
       class="btn-sharing"
+      dark
+      elevatio="0"
+      color="#ff0000"
       target="_blank"
       v-if="socialMedia == 'telegram'"
     >

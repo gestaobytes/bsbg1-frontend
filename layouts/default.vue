@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <!-- <Accessibility v-if="!isXs" /> -->
 
-    <NavTop />
+    <NavTop :categories=categories :menuCategories=menuCategories />
 
     <v-main class="mt-10">
       <!-- <v-row>
@@ -27,13 +27,16 @@
       </v-row>
     </v-main>
 
-    <NavigatorDrawer />
+    <NavigatorDrawer :categories=categories :menuCategories=menuCategories />
     <Footer v-if="!isXs" />
     <BotomNavigator v-if="isXs" />
   </v-app>
 </template>
 
 <script>
+import axios from "axios";
+import { urlPublic } from "@/global";
+
 import Accessibility from "@/components/utils/Accessibility";
 import NavTop from "@/components/layouts/NavTop";
 import NavigatorDrawer from "@/components/layouts/NavigatorDrawer";
@@ -54,6 +57,8 @@ export default {
       classDivHeader: null,
       dateFinalBannerTO: "31/10/2021",
       showBannerTO: false,
+      categories: [],
+      menuCategories: [],
     };
   },
 
@@ -80,6 +85,19 @@ export default {
     },
   },
 
+  methods: {
+    loadCategoriesAndBlogs() {
+      axios.get(`${urlPublic}/categories`).then((res) => {
+        this.categories = res.data.map((c) => {
+          return c.id, c.title;
+        });
+        this.menuCategories = res.data;
+      });
+    },
+  },
 
+  mounted() {
+    this.loadCategoriesAndBlogs();
+  },
 };
 </script>

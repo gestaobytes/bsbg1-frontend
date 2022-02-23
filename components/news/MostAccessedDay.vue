@@ -7,7 +7,7 @@
         :to="{ name: 'category-slug', params: { category: lastest.slugCategory, slug: lastest.slug } }" >
         <tr>
           <td width="10px">
-            <v-avatar color="#ff0000" size="30" class="mt-2 mr-2">
+            <v-avatar color="#a80017" size="30" class="mt-2 mr-2">
               <span class="white--text">{{ index + 1 }}º</span>
             </v-avatar>
           </td>
@@ -83,18 +83,20 @@ export default {
   margin-top: 7px;
   margin-bottom: 0px;
   font-size: 1em !important;
-  color: #ff0000;
+  color: #a80017;
   text-transform: uppercase;
   font-weight: 400;
+  font-family: "Roboto", sans-serif !important;
   text-decoration: none;
 }
 .retracts-most-accessed-lg-md {
   margin-top: 7px;
   margin-bottom: 0px;
   font-size: 0.75em !important;
-  color: #ff0000;
+  color: #a80017;
   text-transform: uppercase;
   font-weight: 400;
+  font-family: "Roboto", sans-serif !important;
   text-decoration: none;
 }
 </style>

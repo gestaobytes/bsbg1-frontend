@@ -1,60 +1,109 @@
 <template>
-  <table width="100%">
-    <tr
-      class="pa-3 tr-lasts-posts mb-3"
-      v-for="(lastest) in fontData"
-      :fontData="fontData"
-      :key="lastest.id"
-    >
-      <NuxtLink
-        style="text-decoration:none"
-        :to="{ name: 'category-slug', params:  {category: lastest.slugCategory, slug: lastest.slug  } }"
+  <div :fontData="fontData">
+    <div v-if="fontData">
+      <v-card
+        outlined
+        elevation="0"
+        v-for="lastest in fontData"
+        :key="lastest.id"
+        class="mb-7"
       >
-        <td
-          style="display: table-cell; vertical-align:top;"
-          v-if="!$vuetify.breakpoint.xs && lastest.image!='' && lastest.image!=null"
-          width="160px"
-          class="pa-4"
-        >
-          <v-lazy :v-model="lazyData" :options="{threshold: .1}" transition="fade-transition">
-            <img v-if="fontData.image!='undefined' && fontData.image!=''" width="100%" :src="storage+lastest.image" />
-          </v-lazy>
-        </td>
+        <table width="100%">
+          <tr class="pa-3 mb-3">
+            <NuxtLink
+              style="text-decoration: none"
+              :to="{
+                name: 'category-slug',
+                params: { category: lastest.slugCategory, slug: lastest.slug },
+              }"
+            >
+              <td
+                style="display: table-cell; vertical-align: top"
+                v-if="
+                  !$vuetify.breakpoint.xs &&
+                  lastest.image != '' &&
+                  lastest.image != null
+                "
+                width="160px"
+                class="pa-4"
+              >
+                <v-lazy
+                  :v-model="lazyData"
+                  :options="{ threshold: 0.1 }"
+                  transition="fade-transition"
+                >
+                  <img
+                    v-if="fontData.image != 'undefined' && fontData.image != ''"
+                    width="100%"
+                    :src="storage + lastest.image"
+                  />
+                </v-lazy>
+              </td>
 
-        <td style="display: table-cell; vertical-align:top;" class="pa-4">
-          <v-lazy :v-model="lazyData" :options="{threshold: .1}" transition="fade-transition">
-            <img
-              class="mb-1"
-              v-if="$vuetify.breakpoint.xs && lastest.image!='' && lastest.image!=null && lastest.image!='' && lastest.image!='undefined'"
-              width="100%"
-              :src="storage+lastest.image"
-            />
-          </v-lazy>
-          <span
-            class="retracts-most-accessed"
-            v-if="$vuetify.breakpoint.xl || $vuetify.breakpoint.sm || $vuetify.breakpoint.xs"
-          >{{lastest.retracts}}</span>
-          <span
-            class="retracts-most-accessed-lg-md text--primary"
-            v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md"
-          >{{lastest.retracts}}</span>
+              <td style="display: table-cell; vertical-align: top" class="pa-4">
+                <v-lazy
+                  :v-model="lazyData"
+                  :options="{ threshold: 0.1 }"
+                  transition="fade-transition"
+                >
+                  <img
+                    class="mb-1"
+                    v-if="
+                      $vuetify.breakpoint.xs &&
+                      lastest.image != '' &&
+                      lastest.image != null &&
+                      lastest.image != '' &&
+                      lastest.image != 'undefined'
+                    "
+                    width="100%"
+                    :src="storage + lastest.image"
+                  />
+                </v-lazy>
+                <span
+                  class="retracts-most-accessed"
+                  v-if="
+                    $vuetify.breakpoint.xl ||
+                    $vuetify.breakpoint.sm ||
+                    $vuetify.breakpoint.xs
+                  "
+                  >{{ lastest.retracts }}</span
+                >
+                <span
+                  class="retracts-most-accessed-lg-md text--primary"
+                  v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md"
+                  >{{ lastest.retracts }}</span
+                >
 
-          <p
-            class="title-most-accessed text--primary"
-            v-if="$vuetify.breakpoint.xl || $vuetify.breakpoint.sm || $vuetify.breakpoint.xs"
-          >{{lastest.titleadapter}}</p>
-          <p
-            class="title-most-accessed-lg-md"
-            v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md"
-          >{{lastest.titleadapter}}</p>
+                <p
+                  class="title-most-accessed text--primary"
+                  v-if="
+                    $vuetify.breakpoint.xl ||
+                    $vuetify.breakpoint.sm ||
+                    $vuetify.breakpoint.xs
+                  "
+                >
+                  {{ lastest.titleadapter }}
+                </p>
+                <p
+                  class="title-most-accessed-lg-md"
+                  v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md"
+                >
+                  {{ lastest.titleadapter }}
+                </p>
 
-          <p v-if="!$vuetify.breakpoint.md" class="tilt-subtitle mt-n1 mb-5 text--primary">{{lastest.subtitle}}</p>
-
-          <p class="tilt-tags mt-n3 mb-0" v-if="lastest.tags!=''">#{{lastest.tags}}</p>
-        </td>
-      </NuxtLink>
-    </tr>
-  </table>
+                <p
+                  v-if="!$vuetify.breakpoint.md"
+                  class="tilt-subtitle mt-n1 mb-5 text--primary"
+                >
+                  {{ lastest.subtitle }}
+                </p>
+              </td>
+            </NuxtLink>
+          </tr>
+        </table>
+      </v-card>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -89,7 +138,6 @@ export default {
   color: #ff0000;
   text-transform: uppercase;
   font-weight: 400;
-  font-family: "Roboto", sans-serif !important;
   text-decoration: none;
 }
 .retracts-most-accessed-lg-md {
@@ -99,7 +147,6 @@ export default {
   color: #ff0000;
   text-transform: uppercase;
   font-weight: 400;
-  font-family: "Roboto", sans-serif !important;
   text-decoration: none;
 }
 .tilt-subtitle {

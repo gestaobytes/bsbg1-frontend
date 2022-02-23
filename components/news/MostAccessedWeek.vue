@@ -1,29 +1,16 @@
 <template>
   <table width="100%" v-if="mostAccessedWeek!=''">
-    <!-- <TitleIcon icon="fa fa-star" title="TOP's Semanal" /> -->
     <div v-for="(lastest) in mostAccessedWeek" :key="lastest.id" width="100%">
       <NuxtLink
          class=""
         :to="{ name: 'category-slug', params: { category: lastest.slugCategory, slug: lastest.slug } }" >
         <tr>
-          <!-- <td width="10px">
-            <v-avatar color="#ff0000" size="30" class="mt-2 mr-2">
-              <span class="white--text">{{ index + 1 }}º</span>
-            </v-avatar>
-          </td> -->
           <td width="98%">
-            <p class="title-most-accessed text--primary" v-if="$vuetify.breakpoint.xl || $vuetify.breakpoint.sm || $vuetify.breakpoint.xs">
+            <p class="text--primary" v-if="$vuetify.breakpoint.xl || $vuetify.breakpoint.sm || $vuetify.breakpoint.xs">
               {{ lastest.titleadapter }}
             </p>
-            <p class="title-most-accessed-lg-md text--primary" v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md">
+            <p class="text--primary" v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md">
               {{ lastest.titleadapter }}
-            </p>
-            <p class="title-most-accessed text--primary" v-if="$vuetify.breakpoint.xl || $vuetify.breakpoint.sm || $vuetify.breakpoint.xs">
-              {{ lastest.created_at }}
-            </p>
-            <hr />
-            <p class="title-most-accessed-lg-md text--primary" v-if="$vuetify.breakpoint.lg || $vuetify.breakpoint.md">
-              {{ lastest.created_at }}
             </p>
           </td>
         </tr>
@@ -82,18 +69,20 @@ export default {
   margin-top: 7px;
   margin-bottom: 0px;
   font-size: 1em !important;
-  color: #ff0000;
+  color: #a80017;
   text-transform: uppercase;
   font-weight: 400;
+  font-family: "Roboto", sans-serif !important;
   text-decoration: none;
 }
 .retracts-most-accessed-lg-md {
   margin-top: 7px;
   margin-bottom: 0px;
   font-size: 0.75em !important;
-  color: #ff0000;
+  color: #a80017;
   text-transform: uppercase;
   font-weight: 400;
+  font-family: "Roboto", sans-serif !important;
   text-decoration: none;
 }
 

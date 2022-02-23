@@ -15,14 +15,6 @@
 
     <div class="container">
 
-      <!-- <v-layout row class="ads mt-10 mb-5">
-        <v-flex>
-          <a href="https://palmas.to.gov.br" target="_blank">
-            <img src="@/static/banners/pmw.jpg" width="100%" class="mt-1 mb-5" />
-          </a>
-        </v-flex>
-      </v-layout> -->
-
       <v-row class="mt-4">
         <v-col xs="12" sm="12" md="6" lg="6" xl="6" cols="12" class="text-center" v-if="load">
           <v-progress-circular  width="3" size="200" color="amber" indeterminate />
@@ -33,8 +25,8 @@
           <div class="posts-articles">
             <h5 class="retracts mb-n1">{{ article.retracts }}</h5>
 
-            <h1 class="display-1 font-weight-medium text--primary">{{ article.titleadapter }}</h1>
-            <h2 class="headline mt-3 text--primary">{{ article.subtitle }}</h2>
+            <h1 class="title-post text--primary">{{ article.titleadapter }}</h1>
+            <h2 class="subtitle-post mt-3 text--primary">{{ article.subtitle }}</h2>
 
             <h5 class="title-sharing my-10">
               <ButtonSharing :urlLocal="urlComplete" socialMedia="facebook" />
@@ -61,7 +53,7 @@
                 {{article.date_start | dateBRL}}
               </p>
 
-              <div class="video-container text--primary" v-html="article.text"></div>
+              <div class="video-container text-post text--primary" v-html="article.text"></div>
               <div class="mt-2 mb-10">
                 <h5 class="title-sharing">
                   <ButtonSharing :urlLocal="urlComplete" socialMedia="facebook" />
@@ -106,12 +98,12 @@
         <v-col xs="12" sm="6" md="3" lg="4" xl="4" cols="12">
 
 
-          <TitlePage
+          <!-- <TitlePage
             title="NOTÍCIAS"
             titleDestak="RECENTES"
             class="intertitle mt-10 mb-n7"
           />
-          <NewsRecent :fontData="recentNews" />
+          <NewsRecent :fontData="recentNews" /> -->
 
 
 
@@ -314,4 +306,16 @@ export default {
 
 
 <style>
+.title-post {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.subtitle-post {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.text-post {
+  font-size: 0.5rem;
+  font-weight: 300;
+}
 </style>

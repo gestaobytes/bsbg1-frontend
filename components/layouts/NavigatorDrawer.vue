@@ -1,56 +1,44 @@
 <template>
-
   <v-navigation-drawer
     fixed
     v-model="drawer"
     temporary
     :bottom="this.$nuxt.$vuetify.breakpoint.name == 'xs'"
     class="pt-7 pl-3 pr-4"
+    :categories="categories"
+    :menuCategories="menuCategories"
   >
     <v-list-item>
       <v-list-item-content>
-        <v-list-item-title class="title">
-          Editorias
-        </v-list-item-title>
-        <v-list-item-subtitle>
-          navegue por assunto
-        </v-list-item-subtitle>
+        <img
+          src="@/static/logo-bsbg1-color.svg"
+          :alt="titlePage"
+          width="350px"
+          style="z-index: 999"
+        />
       </v-list-item-content>
     </v-list-item>
 
     <v-divider></v-divider>
 
     <v-list dense nav>
-      
-
-
       <v-list-item
         v-for="(item, i) in menuCategories"
         :key="i"
         :to="{ name: 'category', params: { category: item.slug } }"
       >
-        <!-- <v-list-item-icon>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-item-icon> -->
-
         <v-list-item-content>
           <v-list-item-title>{{ item.title }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-
-
-
-
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
-import axios from "axios";
-import { urlPublic } from "@/global";
-
 export default {
   name: "NavigatorDrawer",
+  props: ["categories", "menuCategories"],
   computed: {
     drawer: {
       get() {
@@ -61,28 +49,6 @@ export default {
       },
     },
   },
-
-  data() {
-    return {
-      valueCategories: [],
-      categories: [],
-      menuCategories: [],
-    };
-  },
-
-  methods: {
-    loadCategoriesAndBlogs() {
-      axios.get(`${urlPublic}/categories`).then((res) => {
-        this.categories = res.data.map((c) => {
-          return c.id, c.title;
-        });
-        this.menuCategories = res.data;
-      });
-    },
-  },
-
-  mounted() {
-    this.loadCategoriesAndBlogs();
-  },
 };
 </script>
+
