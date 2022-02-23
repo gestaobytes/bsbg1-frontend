@@ -493,8 +493,8 @@ export default {
     return {
       title: 'Página Inicial',
       meta: [
-        { hid: "description", name: "description", content: "Portal de notícias com abrangência no Sul do estado do Maranhão, Norte do Tocantins e Sul do Pará. Notícias e informações para quem deseja saber a verdade dos fatos." },
-        { hid: "keywords", name: "keywords", content: "otícias Maranhão, Sul do Maranhão, Notícias Estreito, Notícias Porto Franco, Política Maranhão, Política Tocantins, Política Pará, Notícias Bico do Papagaio, Notícias Norte do Tocantins, Notícias Carolina, Notícias Araguaína, Notícias Aguiarnópolis, Notícias Tocantinópolis, Notícias Darcinópolis, Notícias Palmeiras do Tocantins, Notícias Nazaré, Política Sul Maranhão, Política Norte do Tocantins" },
+        { hid: "description", name: "description", content: "Acompanhe as notícias sobre política, análise e opinião, eleições, palmas, goiânia, brasíla no site feito sob medida para leitores exigentes. Raimundo Lira " },
+        { hid: "keywords", name: "keywords", content: "Notícias Tocantins, Notícias Goiás, Notícias Palmas, Notícias Goiânia, Notícias Brasília, Política Goiás, Política Tocantins, Política Brasília" },
       ],
       link: [
         { hid: 'canonical', href: "https://bsbg1.com.br" },

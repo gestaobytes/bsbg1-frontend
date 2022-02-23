@@ -90,7 +90,7 @@
             </td>
             <td width="100px" class="text-right">
               <p class="datenow ml-3 mt-2 mb-n1 text--primary">
-                Palmas/TO, {{ dateNow }}
+                {{ dateNow }}
               </p>
             </td>
           </tr>

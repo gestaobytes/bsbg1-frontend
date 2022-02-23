@@ -9,6 +9,8 @@
                 Editor Geral <br/>
                 Raimundo Batista Lira <br/>
                 DRT/GO 01280JP <br/> <br/>
+                31.246.479/0001-74 <br/>
+                RB Lira Publicidade Eireli
               </v-col>
 
 
@@ -31,10 +33,8 @@
                 <v-spacer></v-spacer>
 
                 bsbbg1@gmail.com <br/>
-                Goiânia/GO <br/>
                 (62) 98560 5450 <br/>
                 (61) 98144 0178 <br/> <br/>
-
 
 
                 <v-btn href="https://www.facebook.com" color="white" fab x-small outlined class="pa-n2 mr-2">
