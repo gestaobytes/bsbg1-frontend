@@ -215,7 +215,7 @@
     </v-layout>
 
     <div class="text-xs-center mt-5">
-      <v-pagination color="#0098b0" v-if="paginate > 1" v-model="page" :length="paginate" :total-visible="7" circle/>
+      <v-pagination color="orange" v-if="paginate > 1" v-model="page" :length="paginate" :total-visible="7" circle/>
     </div>
   </div>
 </template>
@@ -332,8 +332,7 @@ export default {
         this.subcategories = res.data.map((subcategory) => {
           return {
             value: subcategory.id,
-            text: subcategory.titleCategory,
-            // text: subcategory.titleCategory + " " + subcategory.title,
+            text: subcategory.titleCategory + " " + subcategory.title,
           };
         });
       });
