@@ -1,5 +1,4 @@
 <template>
-  <!-- <div :class="sticky ? 'top-fixed shadow' : 'shadow'"> -->
   <div class="shadow" :menuCategories=menuCategories>
     <div style="background: #003399; margin-top: -20px" height="5px">
       .
@@ -49,34 +48,34 @@
 
     <div class="top-header">
       <div class="container">
-        <!-- <table width="100%">
+        <table width="100%">
           <tr>
-            <td width="100px" class="text-right">
-              .
+            <td width="110px" class="text-right">
+              &nbsp;
             </td>
-            <td class="text-center">
+            <td min-width="280px" class="text-center">
               <NuxtLink to="/">
                 <img
                   src="@/static/logo-bsbg1-color.svg"
                   :alt="titlePage"
-                  width="250px"
+                  width="280px"
                   style="z-index:999"
-                  class="mb-10"
+                  class="mt-1"
                 />
               </NuxtLink>
             </td>
-            <td width="100px" class="text-right">
+            <td width="110px" class="text-right">
               <img
                 src="@/static/by-raimundo-lira.svg"
                 :alt="titlePage"
                 width="100%"
-                class="mt-10"
+                class="mt-1"
               />
             </td>
           </tr>
-        </table> -->
+        </table>
 
-        <table width="100%">
+        <!-- <table width="100%">
           <tr>
             <td width="100px" class="text-right">.</td>
             <td class="text-center">
@@ -94,7 +93,7 @@
               </p>
             </td>
           </tr>
-        </table>
+        </table> -->
       </div>
       <v-card tile color="#ff0000">
         <div class="container">

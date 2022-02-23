@@ -9,8 +9,6 @@
                 Editor Geral <br/>
                 Raimundo Batista Lira <br/>
                 DRT/GO 01280JP <br/> <br/>
-                31.246.479/0001-74 <br/>
-                RB Lira Publicidade Eireli
               </v-col>
 
 
