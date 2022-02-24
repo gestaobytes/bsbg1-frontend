@@ -70,6 +70,18 @@
         </v-list-item-content>
       </v-list-item>
       <v-divider v-if="linksNewspaper"></v-divider>
+
+      <v-list-item @click="logout()">
+        <v-list-item-icon>
+          <v-icon>mdi-close-outline</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>Sair</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+
+
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -114,6 +126,18 @@ export default {
       linksSettings: [],
     };
   },
+
+
+   methods: {
+    logout() {
+      localStorage.removeItem(keyApplicationGB);
+      this.$store.commit("setUser", null);
+      this.$auth.logout();
+    },
+  },
+
+
+
 
   mounted() {
     const json = localStorage.getItem(keyApplicationGB);
