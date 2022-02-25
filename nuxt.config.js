@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 import axios from 'axios'
 const pkg = require('./package');
-var urlApi = pkg.local_web=='local' ? pkg.apiLocal : pkg.apiWeb;
+const urlApi = (pkg.webOrLocal == 'local') ? pkg.urlApiLocal : (pkg.webOrLocal == 'homologation' ? pkg.urlApiHomologation : pkg.urlApiWeb);
 
 export default {
 
