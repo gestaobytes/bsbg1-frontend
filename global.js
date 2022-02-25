@@ -1,16 +1,20 @@
 import Vue from 'vue'
 const pkg = require('./package');
 
-export const keyApplicationGB = 'auth._gestaobyteskey'
+export const keyApplicationGB = '_keyapplicationGB'
+export const configsApplication = '_settingsapplicationGB'
 
 export const titlePage = pkg.titlePage
+export const company = pkg.company
 export const adminSuper = pkg.adminSuper
-export const linksNav = pkg.linksNav
-export const urlApi = pkg.local_web=='local' ? pkg.apiLocal : pkg.apiWeb
-export const urlSite = pkg.urlSite
-export const urlStorage = pkg.storage
+export const urlApi = (pkg.webOrLocal == 'local' ? pkg.urlApiLocal : pkg.urlApiWeb)
+
+export const urlSite = 'https://www.bsbg1.com.br'
+
 export const urlPublic = urlApi + '/public'
 export const urlAdmin = urlApi + '/admin'
+export const urlStorage = (pkg.webOrLocal == 'local' ? pkg.storageLocal : pkg.storageWeb)
+export const dateStart = pkg.dateStart
 
 export function showError(e) {
     if (e && e.response && e.response.data) {
@@ -23,4 +27,4 @@ export function showError(e) {
     }
 }
 
-export default { keyApplicationGB, urlApi, urlPublic, urlAdmin, urlStorage, urlSite, adminSuper, linksNav, titlePage, showError }
+export default { urlSite, configsApplication, keyApplicationGB, urlApi, urlPublic, urlAdmin, urlStorage, adminSuper, titlePage, company, showError }

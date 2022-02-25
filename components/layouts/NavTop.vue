@@ -57,7 +57,7 @@
               <NuxtLink to="/">
                 <img
                   src="@/static/logo-bsbg1-color.svg"
-                  :alt="titlePage"
+                  alt="BSBG1"
                   width="280px"
                   style="z-index:999"
                   class="mt-1"
@@ -67,7 +67,7 @@
             <td width="110px" class="text-right">
               <img
                 src="@/static/by-raimundo-lira.svg"
-                :alt="titlePage"
+                alt="BSBG1"
                 width="100%"
                 class="mt-1"
               />

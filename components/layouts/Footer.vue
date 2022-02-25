@@ -68,13 +68,11 @@
 </template>
 
 <script>
-import { linksNav } from "@/global";
 export default {
   name: "Footer",
   data() {
     return {
       scrollBtn: false,
-      links: linksNav,
       currentYear: null,
     };
   },

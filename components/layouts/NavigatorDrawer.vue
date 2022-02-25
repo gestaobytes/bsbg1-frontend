@@ -12,8 +12,8 @@
       <v-list-item-content>
         <img
           src="@/static/logo-bsbg1-color.svg"
-          :alt="titlePage"
-          width="350px"
+          alt="BSBG1"
+          width="120px"
           style="z-index: 999"
         />
       </v-list-item-content>

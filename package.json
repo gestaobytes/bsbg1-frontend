@@ -1,14 +1,22 @@
 {
-  "local_web": "web",
-  "apiWeb": "https://bsbg1.gestaobytes.com/api/v1",
-  "apiLocal": "http://bsbg1.local/api/v1",
-  "storage": "https://storage.googleapis.com/bsbg1",
-  "urlSite": "https://www.bsbg1.com.br",
+  "webOrLocal": "local",
+
+  "urlApiLocal": "http://bsbg1.local/api/v1",
+  "urlApiWeb": "https://bsbg1.gestaobytes.com/api/v1",
+  "urlApiHomologation": "https://bsbg1-homologacao.gestaobytes.com/api/v1",
+
+  "storageHomologation": "https://storage.googleapis.com/bsbg1",
+  "storageWeb": "https://storage.googleapis.com/bsbg1",
+  "storageLocal": "https://storage.googleapis.com/bsbg1",
+  "storageClient": "portal",
+
   "name": "bsbg1",
   "titlePage": "BSBG1",
+  "company": "BSBG1",
   "description": "BSBG1",
   "keywords": "BSBG1, Tocantins, Goiás, Goiânia, Palmas, Brasília, Política, Portal CT, T1 Notícias, Cleber Toledo, Roberta Tum, Concursos, Eleições",
-  "author": "Gerisvaldo MACEDO",
+  "author": "MACEDO'S { Gerisvaldo && Leandro }",
+
   "adminSuper": "super",
   "version": "1.0.0",
   "private": true,

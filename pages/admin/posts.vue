@@ -248,7 +248,7 @@ import {
 
 
 export default {
-  middleware: ["auth", "clearValidationErrors"],
+  middleware: ["clearValidationErrors"],
   mixins: [crud],
   layout: "restrict",
 
@@ -332,7 +332,7 @@ export default {
         this.subcategories = res.data.map((subcategory) => {
           return {
             value: subcategory.id,
-            text: subcategory.titleCategory + " " + subcategory.title,
+            text: subcategory.titleCategory,
           };
         });
       });

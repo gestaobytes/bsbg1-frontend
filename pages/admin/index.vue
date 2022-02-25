@@ -1,16 +1,23 @@
+
+
+
+
 <template>
   <div style="width: 100%">
-    <v-card-title>
-      <h1 class="display-1 font-weight-light">DASHBOARD</h1>
-      <v-spacer></v-spacer>
-      <p class="caption font-weight-medium mt-0 mb-n5">
-        Dados Google [30 dias]
-      </p>
-    </v-card-title>
+    <v-row style="background-color: #eee" class="mt-n3 mb-3">
+      <v-col cols="12">
+        <h4 style="font-weight: 350; color: #38969f; margin-right: 1rem">
+          DASHBOARD
+        </h4>
+        <v-spacer></v-spacer>
+      </v-col>
+    </v-row>
 
-    <v-card class="pa-4">
+    <!-- <div v-if="viewDasboard"> -->
+    <div>
+      <p class="caption font-weight-medium">Dados Google [30 dias]</p>
       <v-row>
-        <v-col cols="12" xs="12" sm="6" md="4" lg="4" xl="4">
+        <v-col sm="6" md="4" lg="4" xl="4">
           <v-alert color="primary" outlined>
             <v-row>
               <v-col cols="12">
@@ -40,14 +47,13 @@
           </v-alert>
         </v-col>
 
-        <v-col cols="12" xs="12" sm="6" md="4" lg="4" xl="4">
+        <v-col sm="6" md="4" lg="4" xl="4">
           <v-alert color="primary" outlined>
             <v-row>
               <v-col cols="12">
                 <p class="title mb-n1 mt-n5">Como acessam</p>
               </v-col>
             </v-row>
-
             <BarProgress
               :value="allAccesses.percentDirect"
               origem="Diretamente"
@@ -60,7 +66,6 @@
               :percent="allAccesses.percentGoogle"
               :accesses="allAccesses.google"
             />
-
             <v-row>
               <v-col cols="12">
                 <p class="title mb-n2">Mídias Sociais</p>
@@ -87,8 +92,8 @@
           </v-alert>
         </v-col>
 
-        <v-col cols="12" xs="12" sm="12" md="4" lg="4" xl="4">
-          <v-alert color="#0098b0 darken-1" outlined>
+        <v-col sm="12" md="4" lg="4" xl="4">
+          <v-alert color="orange darken-1" outlined>
             <v-row>
               <v-col cols="12">
                 <p class="title mb-n1 mt-n5">Produção</p>
@@ -99,7 +104,7 @@
               origem="Total Cadastrado"
               :accesses="allAccesses.postTotal"
               :value="100"
-              color="#0098b0 darken-1"
+              color="orange darken-1"
             />
             <BarProgressProduction
               origem="30 dias"
@@ -118,18 +123,10 @@
             />
           </v-alert>
         </v-col>
-
-        <!-- <v-col xs="12" sm="6" md="4" lg="3" xl="3">
-        <v-alert class="pt-8" color="primary" dark icon="mdi-web" border="top" prominent>
-          <p class="title mt-n3">Acessos</p>
-          <p class="headline font-weight-light mt-n5">2.458.321</p>
-          <p class="caption font-weight-light mt-n5 mb-0">desde 01/01/2018</p>
-        </v-alert>
-        </v-col>-->
       </v-row>
 
       <v-row>
-        <v-col cols="12" xs="12" sm="12" md="8" lg="8" xl="8">
+        <v-col sm="12" md="8" lg="8" xl="8">
           <v-alert color="primary" outlined>
             <v-row>
               <v-col cols="12">
@@ -137,7 +134,7 @@
               </v-col>
             </v-row>
 
-            <!-- <v-row>
+            <v-row>
               <v-col cols="12">
                 <v-simple-table>
                   <template v-slot:default>
@@ -168,33 +165,34 @@
                   </template>
                 </v-simple-table>
               </v-col>
-            </v-row> -->
+            </v-row>
           </v-alert>
         </v-col>
       </v-row>
-    </v-card>
+    </div>
   </div>
 </template>
 
 <script>
-import { urlAdmin } from "@/global";
 import axios from "axios";
-import CircularProgress from '@/components/designs/progress/CircularProgress.vue'
-import BarProgressProduction from '@/components/designs/progress/BarProgressProduction.vue'
-import BarProgress from '@/components/designs/progress/BarProgress.vue'
+import { keyApplicationGB, urlAdmin, adminSuper } from "@/global";
+
+import CircularProgress from "~/components/loadings/DesignCircularProgress.vue";
+import BarProgress from "~/components/loadings/DesignBarProgress.vue";
+import BarProgressProduction from "~/components/loadings/DesignBarProgressProduction.vue";
 
 export default {
+  // middleware: ["clearValidationErrors"],
   layout: "restrict",
-  middleware: ['auth', 'clearValidationErrors'],
-
   components: {
-    BarProgressProduction,
-    BarProgress,
     CircularProgress,
+    BarProgress,
+    BarProgressProduction,
   },
 
   data: function () {
     return {
+      viewDasboard: false,
       allAccesses: {},
       categoriesAccesses: {},
       maturityBanners: {},
@@ -205,34 +203,23 @@ export default {
     };
   },
 
-  head(){
-    return {
-      title: "Dasboard"
-    }
-  },
-
-
   methods: {
-    loadAllAccesses() {
-      axios.get(`${urlAdmin}/analytics`).then((res) => {
-        this.allAccesses = res.data;
-        this.percentMonth =
-          (this.allAccesses.postMonth / this.allAccesses.postMonth) * 100;
-        this.percentWeek =
-          (this.allAccesses.postWeak / this.allAccesses.postMonth) * 100;
-        this.percentDay =
-          (this.allAccesses.postDay / this.allAccesses.postMonth) * 100;
-        this.registersTopPages = this.allAccesses.topPages;
-      });
-    },
     openPost(slug) {
-      this.url = `https://www.bsbg1.com.br${slug}`;
+      this.url = `http://www.poptvnews.com.br${slug}`;
       window.open(this.url);
     },
   },
 
   mounted() {
-    this.loadAllAccesses();
+    const json = localStorage.getItem(keyApplicationGB);
+    const userData = JSON.parse(json);
+
+    const p = userData.permissions;
+    const isSuperADM = p.includes(`${adminSuper}`);
+
+    if (isSuperADM || p.includes("admin")) {
+      this.viewDasboard = true;
+    }
   },
 };
 </script>
