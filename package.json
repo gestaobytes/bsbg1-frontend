@@ -1,5 +1,5 @@
 {
-  "webOrLocal": "local",
+  "webOrLocal": "web",
 
   "urlApiLocal": "http://bsbg1.local/api/v1",
   "urlApiWeb": "https://bsbg1.gestaobytes.com/api/v1",
