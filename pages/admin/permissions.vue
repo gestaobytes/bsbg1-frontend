@@ -82,7 +82,7 @@ import ViewCustomTable from "~/components/elements-views/ViewCustomTable.vue";
 import ViewModalLight from "~/components/elements-views/ViewModalLight.vue";
 
 export default {
-  middleware: ["auth", "clearValidationErrors"],
+  middleware: ["clearValidationErrors"],
   mixins: [crud],
   layout: "restrict",
   components: {

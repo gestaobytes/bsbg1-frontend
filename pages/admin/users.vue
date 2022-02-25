@@ -200,7 +200,7 @@ import ViewModalLight from "~/components/elements-views/ViewModalLight.vue";
 import { required, email, minLength, maxLength, minValue, maxValue } from "vuelidate/lib/validators";
 
 export default {
-  middleware: ["auth", "clearValidationErrors"],
+  middleware: ["clearValidationErrors"],
   mixins: [crud],
   layout: "restrict",
   components: {

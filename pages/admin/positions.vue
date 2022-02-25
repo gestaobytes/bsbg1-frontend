@@ -93,7 +93,7 @@ import {
 } from "vuelidate/lib/validators";
 
 export default {
-  //middleware: ["auth", "clearValidationErrors"],
+  middleware: ["clearValidationErrors"],
   mixins: [crud],
   layout: "restrict",
   components: {
