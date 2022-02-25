@@ -115,7 +115,7 @@ export default {
 
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next',
+    // '@nuxtjs/auth-next',
     '@nuxtjs/fontawesome',
     'vue-sweetalert2/nuxt',
     'nuxt-material-design-icons',
@@ -126,20 +126,20 @@ export default {
     baseURL: `${urlApi}`
   },
 
-  auth: {
-    redirect: { login: '/login', logout: '/', callback: '/login', home: '/admin' },
-    strategies: {
-      local: {
-        token: { property: 'token', type: 'Bearer' },
-        user: { property: 'user', autoFetch: false },
-        endpoints: {
-          login: { url: '/auth/signin', method: 'POST' },
-          logout: { url: '/auth/logout', method: 'POST' },
-          user: { url: '/auth/me', method: 'get' }
-        },
-      }
-    }
-  },
+  // auth: {
+  //   redirect: { login: '/login', logout: '/', callback: '/login', home: '/admin' },
+  //   strategies: {
+  //     local: {
+  //       token: { property: 'token', type: 'Bearer' },
+  //       user: { property: 'user', autoFetch: false },
+  //       endpoints: {
+  //         login: { url: '/auth/signin', method: 'POST' },
+  //         logout: { url: '/auth/logout', method: 'POST' },
+  //         user: { url: '/auth/me', method: 'get' }
+  //       },
+  //     }
+  //   }
+  // },
 
   router: {
     middleware: ['clearValidationErrors']
