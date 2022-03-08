@@ -98,7 +98,7 @@ export default {
   ],
 
   googleAnalytics: {
-    id: 'UA-56908470-1'
+    id: 'UA-222306246-1'
   },
 
   // googleFonts: {
