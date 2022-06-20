@@ -119,15 +119,15 @@ export default {
       title: this.titleCategory,
       meta: [
         { hid: "description", name: "description", content: "Confira as postagens mais relevantes sobre " + this.titleCategory },
-        { hid: "keywords", name: "keywords", content: this.titleCategory + " JMOMENTO" },
+        { hid: "keywords", name: "keywords", content: this.titleCategory + " BSBG1" },
 
-        { property: "twitter:title", content: this.titleCategory + " JMOMENTO" },
+        { property: "twitter:title", content: this.titleCategory + " BSBG1" },
         { property: "og:url", content: this.urlSite },
         { property: "twitter:url", content: this.urlSite },
-        { property: "og:title", content: this.titleCategory + " JMOMENTO" },
-        { property: "og:description", content: this.titleCategory + " JMOMENTO" },
-        { property: "twitter:description", content: this.titleCategory + " JMOMENTO" },
-        { property: "article:tag", content: this.titleCategory + " JMOMENTO" },
+        { property: "og:title", content: this.titleCategory + " BSBG1" },
+        { property: "og:description", content: this.titleCategory + " BSBG1" },
+        { property: "twitter:description", content: this.titleCategory + " BSBG1" },
+        { property: "article:tag", content: this.titleCategory + " BSBG1" },
       ],
       link: [
         { hid: 'canonical', href: this.urlSite },
