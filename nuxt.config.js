@@ -67,7 +67,13 @@ export default {
       { rel: "stylesheet", href: "https://cdn.tailwindcss.com" },
     ],
     script: [
-
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-BYF1GL1WHW",
+        async: true,
+      },
+      {
+        src: "js/ga.js",
+      }
     ]
   },
   loading: { color: '#ffa915', height: '4px' },
