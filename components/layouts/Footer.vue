@@ -29,10 +29,6 @@
                 Editor Geral <br />
                 Raimundo Batista Lira <br />
                 DRT/GO 01280JP <br />
-                <br />
-
-                Copyright © PopTV News <br />
-                Todos os direitos reservados
               </v-col>
 
               <v-col cols="12" sm="4" md="3">
