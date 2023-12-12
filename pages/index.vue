@@ -2,8 +2,7 @@
   <div>
     <div class="container">
       <v-row>
-
-        <v-col sm="12" md="6" lg="6" xl="4" cols="12" class="px-5">
+        <v-col cols="12" sm="12" md="8" lg="6" class="px-5">
           <v-card class="pa-7">
             <CallImageTitleAndSubtitle
               lazyData="false"
@@ -14,19 +13,36 @@
           </v-card>
         </v-col>
 
-        <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12">
+        <v-col class="px-5" cols="12" sm="6" md="4" lg="3">
           <div class="mb-7">
-            <AdBanners lazyData="false" :fontData="banners[0]" v-if="banners[0]" />
+            <!-- width="320" height="240" controls="controls" autoplay="autoplay" -->
+            <video controls width="100%" autoplay loop muted>
+              <source src="@/static/san-marco-hotel.mp4" type="video/mp4" />
+              <object>
+                <embed src="@/static/san-marco-hotel.mp4" />
+              </object>
+            </video>
+
+            <!-- <video controls poster="@/static/bg-ads.png">
+              <source src="@/static/san-marco-hotel.mp4" type="video/mp4">
+              <object>
+                <embed src="@/static/san-marco-hotel.mp4" type="application/x-shockwave-flash" 
+                allowfullscreen="false" allowscriptaccess="always">  		
+              </object>
+              Formato não suportado  
+            </video> -->
+
+            <!-- <AdBanners lazyData="false" :fontData="banners[0]" v-if="banners[0]" /> -->
           </div>
-          <CallImageTitle
+          <!-- <CallImageTitle
             lazyData="false"
             :retracts="post[1]"
             :fontData="post[1]"
             v-if="post[1]"
-          />
+          /> -->
         </v-col>
 
-         <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12">
+        <v-col class="px-5" cols="12" sm="6" md="4" lg="3">
           <div class="card-border mb-7 pt-4 pb-3">
             <CallTitle
               lazyData="false"
@@ -44,7 +60,7 @@
           />
         </v-col>
 
-        <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12">
+        <v-col class="px-5" cols="12" sm="6" md="4" lg="3">
           <CallImageTitle
             lazyData="false"
             :retracts="post[4]"
@@ -53,11 +69,15 @@
           />
           <hr class="hr-home mt-4 mb-4" />
           <div class="mt-5">
-            <AdBanners lazyData="false" :fontData="banners[1]" v-if="banners[1]" />
+            <AdBanners
+              lazyData="false"
+              :fontData="banners[1]"
+              v-if="banners[1]"
+            />
           </div>
         </v-col>
 
-        <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12">
+        <v-col class="px-5" cols="12" sm="6" md="4" lg="3">
           <CallImageTitle
             lazyData="false"
             :retracts="post[5]"
@@ -66,7 +86,7 @@
           />
           <hr class="hr-home mt-4 mb-4" />
           <div class="mt-5">
-             <CallTitle
+            <CallTitle
               lazyData="false"
               :retracts="post[6]"
               :fontData="post[6]"
@@ -75,9 +95,20 @@
           </div>
         </v-col>
 
-        <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12" v-if="!$vuetify.breakpoint.lg || !$vuetify.breakpoint.xl">
+        <v-col
+          class="px-5"
+          cols="12"
+          sm="6"
+          md="3"
+          lg="3"
+          v-if="!$vuetify.breakpoint.lg || !$vuetify.breakpoint.xl"
+        >
           <div class="mb-5">
-            <AdBanners lazyData="false" :fontData="banners[2]" v-if="banners[2]" />
+            <AdBanners
+              lazyData="false"
+              :fontData="banners[2]"
+              v-if="banners[2]"
+            />
           </div>
 
           <CallImageTitle
@@ -86,10 +117,17 @@
             :fontData="post[7]"
             v-if="post[7]"
           />
-
         </v-col>
 
-        <v-col class="px-5" sm="6" md="3" lg="3" xl="2" cols="12" v-if="!$vuetify.breakpoint.lg || !$vuetify.breakpoint.xl">
+        <v-col
+          class="px-5"
+          cols="12"
+          sm="6"
+          md="3"
+          lg="3"
+          xl="2"
+          v-if="!$vuetify.breakpoint.lg || !$vuetify.breakpoint.xl"
+        >
           <CallImageTitle
             lazyData="false"
             :retracts="post[8]"
@@ -98,7 +136,7 @@
           />
           <hr class="hr-home mt-4 mb-4" />
           <div class="mt-5">
-             <CallTitle
+            <CallTitle
               lazyData="false"
               :retracts="post[9]"
               :fontData="post[9]"
@@ -106,10 +144,7 @@
             />
           </div>
         </v-col>
-
       </v-row>
-
-
 
       <v-row>
         <!-- essa coluna será exibida somente se diferente de SM.
@@ -139,16 +174,19 @@
         </v-col>
         <!-- essa coluna será exibida somente se for SM.
         A razão, é pra colocar os banners lado a lado -->
-        <v-col
-          class="px-5"
-          sm="6"
-          cols="12"
-          v-if="$vuetify.breakpoint.sm"
-        >
+        <v-col class="px-5" sm="6" cols="12" v-if="$vuetify.breakpoint.sm">
           <AdBanners
             lazyData="false"
             :fontData="banners[1]"
             v-if="banners[1]"
+          />
+        </v-col>
+
+        <v-col class="px-5" sm="6" md="4" lg="3" xl="2" cols="12">
+          <AdBanners
+            lazyData="false"
+            :fontData="banners[3]"
+            v-if="banners[3]"
           />
         </v-col>
 
@@ -159,28 +197,41 @@
           lg="3"
           xl="2"
           cols="12"
+          v-if="!$vuetify.breakpoint.lg"
         >
-          <AdBanners
+          <CallTitleImage
             lazyData="false"
-            :fontData="banners[3]"
-            v-if="banners[3]"
+            :fontData="post[11]"
+            v-if="post[11]"
           />
         </v-col>
 
-        <v-col class="px-5" sm="6" md="4" lg="3" xl="2" cols="12" v-if="!$vuetify.breakpoint.lg">
-          <CallTitleImage lazyData="false" :fontData="post[11]" v-if="post[11]" />
-        </v-col>
-
-        <v-col class="px-5" sm="6" md="4" lg="3" xl="2" cols="12" v-if="!$vuetify.breakpoint.lg">
+        <v-col
+          class="px-5"
+          sm="6"
+          md="4"
+          lg="3"
+          xl="2"
+          cols="12"
+          v-if="!$vuetify.breakpoint.lg"
+        >
           <hr class="hr-home mt-5 mb-5" v-if="$vuetify.breakpoint.xs" />
-          <CallTitleImage lazyData="false" :fontData="post[12]" v-if="post[12]" />
+          <CallTitleImage
+            lazyData="false"
+            :fontData="post[12]"
+            v-if="post[12]"
+          />
         </v-col>
       </v-row>
 
       <v-row class="mt-5">
         <v-col sm="12" md="4" lg="6" xl="4" cols="12" class="px-5">
           <v-card class="pa-5">
-            <CallImageTitle lazyData="false" :fontData="post[14]" v-if="post[14]" />
+            <CallImageTitle
+              lazyData="false"
+              :fontData="post[14]"
+              v-if="post[14]"
+            />
 
             <hr class="hr-home mt-5 mb-10" />
             <CallText :fontData="post[15]" v-if="post[15]" />
@@ -189,14 +240,22 @@
 
         <v-col sm="6" md="4" lg="3" xl="2" cols="12">
           <v-card class="pa-5" color="#003399" elevation="0" dark>
-            <CallImageTitle lazyData="false" :fontData="post[16]" v-if="post[16]" />
+            <CallImageTitle
+              lazyData="false"
+              :fontData="post[16]"
+              v-if="post[16]"
+            />
             <hr class="hr-home mt-5 mb-10" />
             <CallText :fontData="post[17]" v-if="post[17]" />
           </v-card>
         </v-col>
 
         <v-col class="px-5" sm="6" md="4" lg="3" xl="2" cols="12">
-          <AdBanners lazyData="false" :fontData="banners[4]" v-if="banners[4]" />
+          <AdBanners
+            lazyData="false"
+            :fontData="banners[4]"
+            v-if="banners[4]"
+          />
           <hr class="hr-home mt-7 mb-7" />
           <CallText :fontData="post[18]" v-if="post[18]" />
           <hr class="hr-home mt-5 mb-7" />
@@ -218,9 +277,17 @@
           "
         >
           <hr class="hr-home mt-n1 mb-5" v-if="$vuetify.breakpoint.xs" />
-          <CallTitleImage lazyData="false" :fontData="post[20]" v-if="post[20]" />
+          <CallTitleImage
+            lazyData="false"
+            :fontData="post[20]"
+            v-if="post[20]"
+          />
           <hr class="hr-home mt-6 mb-6" />
-          <CallTitleImage lazyData="false" :fontData="post[21]" v-if="post[21]" />
+          <CallTitleImage
+            lazyData="false"
+            :fontData="post[21]"
+            v-if="post[21]"
+          />
         </v-col>
         <v-col
           class="px-5"
@@ -237,9 +304,17 @@
           "
         >
           <hr class="hr-home mt-n1 mb-5" v-if="$vuetify.breakpoint.xs" />
-          <CallTitleImage lazyData="false" :fontData="post[22]" v-if="post[22]" />
+          <CallTitleImage
+            lazyData="false"
+            :fontData="post[22]"
+            v-if="post[22]"
+          />
           <hr class="hr-home mt-6 mb-6" />
-          <CallTitleImage lazyData="false" :fontData="post[23]" v-if="post[23]" />
+          <CallTitleImage
+            lazyData="false"
+            :fontData="post[23]"
+            v-if="post[23]"
+          />
         </v-col>
       </v-row>
     </div>
@@ -328,8 +403,6 @@
       </v-col>
     </v-row>
 
-
-
     <!-- <div class="container">
       <v-row class="mt-1">
         <v-col class="px-5" sm="6" md="3" lg="3" xl="3" cols="12">
@@ -390,8 +463,6 @@
       </v-row>
     </div> -->
 
-
-
     <div class="container">
       <v-row class="mt-10">
         <v-col sm="6" lg="3" cols="12">
@@ -423,11 +494,14 @@
         </v-col>
         <v-col sm="6" lg="3" cols="12">
           <hr class="hr-home mt-n5 mb-5" v-if="$vuetify.breakpoint.xs" />
-          <AdBanners lazyData="false" :fontData="banners[2]" v-if="banners[2]" />
+          <AdBanners
+            lazyData="false"
+            :fontData="banners[2]"
+            v-if="banners[2]"
+          />
         </v-col>
       </v-row>
     </div>
-
   </div>
 </template>
 
@@ -488,21 +562,26 @@ export default {
     };
   },
 
-
   head() {
     return {
-      title: 'Página Inicial',
+      title: "Página Inicial",
       meta: [
-        { hid: "description", name: "description", content: "Acompanhe as notícias sobre política, análise e opinião, eleições, palmas, goiânia, brasíla no site feito sob medida para leitores exigentes. Raimundo Lira " },
-        { hid: "keywords", name: "keywords", content: "Notícias Tocantins, Notícias Goiás, Notícias Palmas, Notícias Goiânia, Notícias Brasília, Política Goiás, Política Tocantins, Política Brasília" },
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "Acompanhe as notícias sobre política, análise e opinião, eleições, palmas, goiânia, brasíla no site feito sob medida para leitores exigentes. Raimundo Lira ",
+        },
+        {
+          hid: "keywords",
+          name: "keywords",
+          content:
+            "Notícias Tocantins, Notícias Goiás, Notícias Palmas, Notícias Goiânia, Notícias Brasília, Política Goiás, Política Tocantins, Política Brasília",
+        },
       ],
-      link: [
-        { hid: 'canonical', href: "https://bsbg1.com.br" },
-      ],
-
+      link: [{ hid: "canonical", href: "https://bsbg1.com.br" }],
     };
   },
-
 
   methods: {
     loadPosts() {

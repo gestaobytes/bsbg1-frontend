@@ -15,20 +15,24 @@
           <v-layout class="container" style="">
             <v-row>
               <v-col cols="12" sm="4" md="3">
-                <img
-                  src="@/static/logo-bsbg-white.svg"
-                  alt="BSBG1"
-                  width="100px"
-                  class="mb-2"
-                  style="z-index: 999"
-                />
+                <p>
+                  <img
+                    src="@/static/logo-bsbg-white.svg"
+                    alt="BSBG1"
+                    width="100px"
+                    class="mb-2"
+                    style="z-index: 999"
+                  />
+                </p>
 
-                31.246.479/0001-74 <br />
-                RB Lira Publicidade Eireli <br />
+                <p>
+                  31.246.479/0001-74 <br />
+                  RB Lira Publicidade Eireli <br /> <br />
 
-                Editor Geral <br />
-                Raimundo Batista Lira <br />
-                DRT/GO 01280JP <br />
+                  Editor Geral <br />
+                  Raimundo Batista Lira <br />
+                  DRT/GO 01280JP
+                </p>
               </v-col>
 
               <v-col cols="12" sm="4" md="3">
