@@ -14,32 +14,21 @@
         </v-col>
 
         <v-col class="px-5" cols="12" sm="6" md="4" lg="3">
-          <div class="mb-7">
-            <!-- width="320" height="240" controls="controls" autoplay="autoplay" -->
+          <!-- <div class="mb-7">
             <video controls width="100%" autoplay loop muted>
               <source src="@/static/san-marco-hotel.mp4" type="video/mp4" />
               <object>
                 <embed src="@/static/san-marco-hotel.mp4" />
               </object>
             </video>
-
-            <!-- <video controls poster="@/static/bg-ads.png">
-              <source src="@/static/san-marco-hotel.mp4" type="video/mp4">
-              <object>
-                <embed src="@/static/san-marco-hotel.mp4" type="application/x-shockwave-flash" 
-                allowfullscreen="false" allowscriptaccess="always">  		
-              </object>
-              Formato não suportado  
-            </video> -->
-
-            <!-- <AdBanners lazyData="false" :fontData="banners[0]" v-if="banners[0]" /> -->
-          </div>
-          <!-- <CallImageTitle
+            <AdBanners lazyData="false" :fontData="banners[0]" v-if="banners[0]" />
+          </div> -->
+          <CallImageTitle
             lazyData="false"
             :retracts="post[1]"
             :fontData="post[1]"
             v-if="post[1]"
-          /> -->
+          />
         </v-col>
 
         <v-col class="px-5" cols="12" sm="6" md="4" lg="3">
