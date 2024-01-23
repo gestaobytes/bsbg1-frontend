@@ -17,7 +17,7 @@
               <v-col cols="12" sm="4" md="3">
                 <p>
                   <img
-                    src="@/static/logo-bsbg-white.svg"
+                    src="@/static/logo.png"
                     alt="BSBG1"
                     width="100px"
                     class="mb-2"

@@ -2,53 +2,20 @@
   <div class="shadow" :menuCategories=menuCategories>
     <div style="background: #003399; margin-top: -20px" height="5px">
       .
-      <!-- <div class="container"> -->
-
-      <!-- <table width="100%">
-          <tr>
-            <td width="50px">
-              <v-btn
-                color="#ff0000"
-                outlined
-                small
-                @click="alternateDrawer()"
-                v-if="this.$nuxt.$vuetify.breakpoint.name != 'xs'"
-              >
-                <v-icon small class="mr-2">mdi-menu</v-icon> Editorial
-              </v-btn>
-            </td>
-            <td width="160px" class="text-right">
-              <v-btn
-                fab
-                x-small
-                :outlined="!$vuetify.theme.dark"
-                dark
-                class="pa-n2 mr-2"
-                href="https://www.facebook.com"
-              >
-                <v-icon small class="ma-n1">fab fa-facebook-f</v-icon>
-              </v-btn>
-
-              <v-btn
-                fab
-                x-small
-                :outlined="!$vuetify.theme.dark"
-                dark
-                class="pa-n2 mr-2"
-                href="https://twitter.com"
-              >
-                <v-icon small class="ma-n1">fab fa-twitter</v-icon>
-              </v-btn>
-            </td>
-          </tr>
-        </table> -->
-
-      <!-- </div> -->
     </div>
 
     <div class="top-header">
-      <div class="container">
-        <table width="100%">
+      <div class="container text-center">
+        <NuxtLink to="/">
+          <img
+            src="@/static/logo.png"
+            alt="BSBG1"
+            width="200px"
+            style="z-index:999"
+            class="mt-1"
+          />
+        </NuxtLink>
+        <!-- <table width="100%">
           <tr>
             <td width="110px" class="text-right">
               &nbsp;
@@ -71,26 +38,6 @@
                 width="100%"
                 class="mt-1"
               />
-            </td>
-          </tr>
-        </table>
-
-        <!-- <table width="100%">
-          <tr>
-            <td width="100px" class="text-right">.</td>
-            <td class="text-center">
-              <NuxtLink to="/">
-                <img
-                  src="@/static/logo-bsbg1.svg"
-                  width="350px"
-                  style="z-index: 999"
-                />
-              </NuxtLink>
-            </td>
-            <td width="100px" class="text-right">
-              <p class="datenow ml-3 mt-2 mb-n1 text--primary">
-                {{ dateNow }}
-              </p>
             </td>
           </tr>
         </table> -->
