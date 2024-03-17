@@ -33,6 +33,11 @@
               <ButtonSharing :urlLocal="urlComplete" :title="article.title" :subtitle="article.subtitle" socialMedia="twitter" />
               <ButtonSharing :urlLocal="urlComplete" socialMedia="linkedin" />
               <ButtonSharing :urlLocal="urlComplete" socialMedia="whatsapp" />
+              <v-btn
+                href="https://www.youtube.com/@poptvnews3398" fab small class="btn-sharing" dark elevatio="0" color="#ff0000" target="_blank"
+              >
+                <v-icon small class="ma-n1">fab fa-youtube</v-icon>
+              </v-btn>
             </h5>
 
             <div class="mt-5 mb-5" justify="center" v-if="article.image">
@@ -60,6 +65,11 @@
                   <ButtonSharing :urlLocal="urlComplete" :title="article.title" :subtitle="article.subtitle" socialMedia="twitter" />
                   <ButtonSharing :urlLocal="urlComplete" socialMedia="linkedin" />
                   <ButtonSharing :urlLocal="urlComplete" socialMedia="whatsapp" />
+                  <v-btn
+                      href="https://www.youtube.com/@poptvnews3398" fab small class="btn-sharing" dark elevatio="0" color="#ff0000" target="_blank"
+                    >
+                      <v-icon small class="ma-n1">fab fa-youtube</v-icon>
+                    </v-btn>
                 </h5>
               </div>
 
